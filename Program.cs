@@ -125,8 +125,34 @@ class Progam
             {
                 char letraAtual = palavraAleatoria[contador];
 
+                if (letraChute == letraAtual)
+                {
+                    letrasAcertadas[contador] = letraAtual;
+                    letraFoiEncontrada = true;
+                }
+
             }
 
+            if (letraFoiEncontrada == false)
+                quantidadeErros++;
+
+            jogadorAcertouPalavra = palavraAleatoria == string.Join("", letrasAcertadas);
+            jogadorPerdeu = quantidadeErros > 5;
+
+            if (jogadorAcertouPalavra)
+            {
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine($"Você acertou! A palavra secreta era {palavraAleatoria}");
+                Console.WriteLine("--------------------------------------------------------");
+            }
+            else if (jogadorPerdeu)
+            {
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine($"Que azar! Tente novamente.");
+                Console.WriteLine("--------------------------------------------------------");
+            }
+
+            Console.ReadLine();
         }
     }
     static void DesenharForca(int quantidadeErros)

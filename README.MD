@@ -34,7 +34,7 @@ Se o jogador chutar mais de 5 letras erradas, ele perde.
 4. Em seguida compile e execute o projeto com o comando:
 
    ```
-   dotnet run --project JogoDaForca.csproj
+   dotnet run JogoDaForca.csproj
    ```
 
 ## Requisitos

@@ -23,6 +23,11 @@ class Progam
             string palavraAleatoria = EscolherPalavraAleatoria();
 
             char[] letrasAcertadas = PreencherLetrasAcertadas(palavraAleatoria);
+
+            ExecutarTentativas(letrasAcertadas, palavraAleatoria);
+
+            if (!JogadorDesejaContinuar())
+                break;
         }
     }
 
@@ -114,6 +119,14 @@ class Progam
             }
 
             char letraChute = char.ToUpper(Convert.ToChar(strLetra));
+            bool letraFoiEncontrada = false;
+
+            for (int contador = 0; contador < palavraAleatoria.Length; contador++)
+            {
+                char letraAtual = palavraAleatoria[contador];
+
+            }
+
         }
     }
     static void DesenharForca(int quantidadeErros)
@@ -196,6 +209,19 @@ class Progam
         }
 
         Console.WriteLine("---------------------------------");
+    }
+
+
+    static bool JogadorDesejaContinuar()
+    {
+        Console.Write("Desaja continuar o jogo? (s/N):");
+        string? opcaoContinuar = Console.ReadLine().ToUpper();
+
+        if (opcaoContinuar != "S")
+
+            return false;
+        return true;
+
     }
 
 }
